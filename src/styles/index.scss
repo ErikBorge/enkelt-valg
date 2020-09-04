@@ -1,8 +1,19 @@
-@import 'App';
+
+//basics
+@import './_variables';
+@import './_mixins';
+@import './_fonts';
 
 //components
+@import './components/top';
+@import './components/result';
+
 
 //bits
+@import './components/bits/map';
+@import './components/bits/valglokale';
+
+@import 'App';
 
 
 body {
