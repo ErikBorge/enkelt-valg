@@ -7,9 +7,13 @@ const App = () => {
   const [hasSelected, setHasSelected] = useState(false);
   const [minKommune, setMinKommune] = useState();
 
+  useEffect(() => {
+
+  }, []);
+
   const changeMinKommune = (e) => {
     setMinKommune(e.target.value);
-    console.log(minKommune);
+    // console.log(minKommune);
   }
 
   const hasSelectedKommune = (kommune) => {
@@ -18,13 +22,21 @@ const App = () => {
     // console.log("Has selected. minKommune: "+minKommune);
   }
 
-
+  const startOver = () => {
+    console.log("starting over");
+    var topElement = document.getElementById("top");
+    topElement.scrollIntoView({behavior: "smooth", block: "start"});
+    setTimeout(function(){
+      setMinKommune("");
+      setHasSelected(false);
+    }, 400);
+  }
 
   return (
-    <div className="App">
+    <div id={"top"} className="App">
       <Top kommune={minKommune} onChange={changeMinKommune} onSelect={hasSelectedKommune}/>
       { hasSelected ?
-        <Result kommune={minKommune}/>
+        <Result goback={startOver} kommune={minKommune}/>
         : null
       }
     </div>

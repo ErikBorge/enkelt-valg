@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { kommuner } from '../kommuner'
 import Autocomplete from 'react-autocomplete'
 
 const Top = (props) => {
-
-
 
   const getSuggestions = () => {
     let suggestions = [];
@@ -32,13 +30,13 @@ const Top = (props) => {
         Finn valglokaler nær deg!
       </div>
       <div className="top__field">
-        <span>Hvilken kommune vil du stemme i?</span>
+        Hvilken kommune vil du stemme i?
         <div className="top__field-input">
           <Autocomplete
             getItemValue={(item) => item.name}
             items={getSuggestions()}
             renderItem={(item, isHighlighted) =>
-              <div className={`item ${isHighlighted ? 'item-highlighted' : ''}`}>
+              <div key={item.name} className={`item ${isHighlighted ? 'item-highlighted' : ''}`}>
                 {item.name}
               </div>
             }
@@ -47,6 +45,10 @@ const Top = (props) => {
                 {children}
               </div>
             )}
+            inputProps={{
+              placeholder: "Trondheim, Vågå, Oslo..."
+
+            }}
             value={props.kommune}
             shouldItemRender={matchKommuneToTerm}
             onChange={e => props.onChange(e) }

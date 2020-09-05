@@ -1,13 +1,38 @@
 .result{
   width: 40%;
-  margin: 500px auto 100px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-bottom: 100px;
   text-align: center;
+  // background-color: pink;
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
+  &__back{
+    width: 120px;
+    display: inline-block;
+    height: 30px;
+    border: 1.5px solid $gray;
+    border-radius: 15px;
+    line-height: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+
+  }
+  &__back:hover{
+    background-color: $gray;
+    color: white;
+  }
 
   &__heading{
     font-size: 24px;
     font-weight: 500;
   }
+  &__failed{
 
-  
+  }
+
+
 
 }
