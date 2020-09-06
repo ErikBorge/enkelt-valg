@@ -1,6 +1,7 @@
 import React from 'react';
 import { kommuner } from '../kommuner'
 import Autocomplete from 'react-autocomplete'
+import Parties from '../assets/parties2.svg'
 
 const Top = (props) => {
 
@@ -19,7 +20,8 @@ const Top = (props) => {
   }
 
   return (
-    <div className="top">
+    <div id={"top"} className="top">
+      <img style={{marginBottom: "30px"}} src={Parties} alt=""/>
       <div className="top__heading">
         <div className="top__heading-text">
           Enkelt valg
@@ -47,7 +49,6 @@ const Top = (props) => {
             )}
             inputProps={{
               placeholder: "Trondheim, Vågå, Oslo..."
-
             }}
             value={props.kommune}
             shouldItemRender={matchKommuneToTerm}

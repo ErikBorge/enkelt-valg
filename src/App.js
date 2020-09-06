@@ -20,12 +20,19 @@ const App = () => {
     setMinKommune(kommune);
     setHasSelected(true);
     // console.log("Has selected. minKommune: "+minKommune);
+    setTimeout(function(){
+      var topElement = document.getElementById("top");
+      topElement.style.display = "none";
+      var resultElement = document.getElementById("result");
+      resultElement.scrollIntoView();
+    }, 500);
   }
 
   const startOver = () => {
     console.log("starting over");
     var topElement = document.getElementById("top");
-    topElement.scrollIntoView({behavior: "smooth", block: "start"});
+    topElement.style.display = "flex";
+    // topElement.scrollIntoView({behavior: "smooth", block: "start"});
     setTimeout(function(){
       setMinKommune("");
       setHasSelected(false);
@@ -33,7 +40,7 @@ const App = () => {
   }
 
   return (
-    <div id={"top"} className="App">
+    <div className="App">
       <Top kommune={minKommune} onChange={changeMinKommune} onSelect={hasSelectedKommune}/>
       { hasSelected ?
         <Result goback={startOver} kommune={minKommune}/>

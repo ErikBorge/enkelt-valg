@@ -1,5 +1,5 @@
 .valglokale{
-  width: 80%;
+  // width: 80%;
   max-width: 540px;
   margin: 0 auto;
   height: 40px;
@@ -16,14 +16,19 @@
 
 
   &__top{
-    padding: 8px 0 0 20px;
+    padding: 8px 15px 0 20px;
     display: flex;
     justify-content: space-between;
+
+    img{
+      //transform: scale(0.7);
+    }
   }
 
   &__heading{
     font-size: 18px;
     // padding: 8px 0 0 20px;
+    overflow: hidden;
   }
 
   &__info{

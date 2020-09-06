@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import Plus from '../../assets/plus.svg';
+import Minus from '../../assets/minus.svg';
+
 const Valglokale = (props) => {
 
   const [isOpen, setisOpen] = useState(false);
@@ -31,16 +34,23 @@ const Valglokale = (props) => {
 
   // console.log(props.lokale);
   return (
-    <div id={props.id} className={`valglokale ${isOpen ? 'valglokale-open' : ''}`} onClick={expandLocation}>
+    <div
+      id={props.id}
+      className={`valglokale ${isOpen ? 'valglokale-open' : ''}`}
+      onClick={expandLocation}
+    >
       <div className="valglokale__top">
         <div className="valglokale__heading">
           {props.lokale.polling_place_name}
         </div>
+        <img alt="" src={`${isOpen ? Minus : Plus}`}/>
       </div>
       { isOpen ?
         <div className="valglokale__info">
           <div className="valglokale__address">
-            <i>{props.lokale.address_line}</i>
+            <a href={`https://www.google.com/maps/dir/?api=1&destination=${props.lokale.gps_coordinates.split(',')[0]},${props.lokale.gps_coordinates.split(',')[1]}`} target="_blank">
+              <i>{props.lokale.address_line}</i>
+            </a>
           </div>
           <div className="valglokale__opening-hours">
             <b>Åpningstider:</b><br/>
