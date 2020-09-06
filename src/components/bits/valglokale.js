@@ -48,7 +48,11 @@ const Valglokale = (props) => {
       { isOpen ?
         <div className="valglokale__info">
           <div className="valglokale__address">
-            <a href={`https://www.google.com/maps/dir/?api=1&destination=${props.lokale.gps_coordinates.split(',')[0]},${props.lokale.gps_coordinates.split(',')[1]}`} target="_blank">
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${props.lokale.gps_coordinates.split(',')[0]},${props.lokale.gps_coordinates.split(',')[1]}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i>{props.lokale.address_line}</i>
             </a>
           </div>

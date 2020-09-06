@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Map from './bits/map';
 import Valglokale from './bits/valglokale';
 
@@ -39,6 +39,7 @@ const Result = (props) => {
     setViewIndex(viewIndex+1);
     console.log("viewIndex " + viewIndex);
   }
+
 
   return (
     <div id={"result"} className="result">
