@@ -1,5 +1,5 @@
 # Enkelt valg
-En super basic app for å finne valglokaler nær deg.
+En web-app for å finne valglokaler nær deg.
 
 ### 1. Clone repository
 
